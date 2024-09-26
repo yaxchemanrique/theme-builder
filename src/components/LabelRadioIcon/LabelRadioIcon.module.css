@@ -7,9 +7,19 @@
   justify-content: center;
   align-items: center;
   border-radius: var(--br);
+  transition: all 200ms ease-in-out;
+}
+
+.labelRadioIcon:hover:not(.selectedLabel) {
+  transform: scale(1.02);
+  background-color: var(--clr-accent-50);
 }
 
 .iconContainer {
   display: grid;
   place-content: center;
+}
+
+.selectedLabel {
+  background-color: var(--clr-accent-200);
 }

@@ -6,7 +6,7 @@ function App() {
   const initialSettings = {
     accentColor: "#CBB9F9",
     theme: "light",
-    icon: "outline",
+    iconStyle: "outline",
     borderRadius: 1,
   };
   const [settings, setSettings] = useState(initialSettings);

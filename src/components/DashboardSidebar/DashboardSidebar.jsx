@@ -14,23 +14,23 @@ function DashboardSidebar({settings}) {
         <section className={styles.sidebarSection}>
           <p className={styles.sectionTitle}>main</p>
           <div className="sidebarLinkContainer">
-            <SidebarLink iconType={settings.icon} icon='home'>Dashboard</SidebarLink>
+            <SidebarLink iconType={settings.iconStyle} icon='home'>Dashboard</SidebarLink>
           </div>
         </section>
         <section className={styles.sidebarSection}>
           <p className={styles.sectionTitle}>app</p>
           <div className="sidebarLinkContainer">
-            <SidebarLink iconType={settings.icon} icon='calendar'>Calendar</SidebarLink>
-            <SidebarLink iconType={settings.icon} icon='messageBubble'>Messages</SidebarLink>
-            <SidebarLink selected={true} iconType={settings.icon} icon='envelope'>Email</SidebarLink>
-            <SidebarLink iconType={settings.icon} icon='user'>Users</SidebarLink>
+            <SidebarLink iconType={settings.iconStyle} icon='calendar'>Calendar</SidebarLink>
+            <SidebarLink iconType={settings.iconStyle} icon='messageBubble'>Messages</SidebarLink>
+            <SidebarLink selected={true} iconType={settings.iconStyle} icon='envelope'>Email</SidebarLink>
+            <SidebarLink iconType={settings.iconStyle} icon='user'>Users</SidebarLink>
           </div>
         </section>
         <section className={styles.sidebarSection}>
           <p className={styles.sectionTitle}>help</p>
           <div className="sidebarLinkContainer">
-            <SidebarLink iconType={settings.icon} icon='bookOpen'>Knowledge Base</SidebarLink>
-            <SidebarLink iconType={settings.icon} icon='settings'>Settings</SidebarLink>
+            <SidebarLink iconType={settings.iconStyle} icon='bookOpen'>Knowledge Base</SidebarLink>
+            <SidebarLink iconType={settings.iconStyle} icon='settings'>Settings</SidebarLink>
           </div>
         </section>
     </aside>

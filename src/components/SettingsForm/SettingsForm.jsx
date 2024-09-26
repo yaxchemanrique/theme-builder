@@ -1,10 +1,13 @@
-import styles from "./SettingsForm.module.css";
-import LabelRadioIcon from "../LabelRadioIcon/LabelRadioIcon.jsx";
 import { useState } from "react";
 
+import LabelRadioIcon from "../LabelRadioIcon/LabelRadioIcon.jsx";
+import InputGroupRadio from "../InputGroupRadio/InputGroupRadio.jsx";
+
+import styles from "./SettingsForm.module.css";
+
 function SettingsForm({ settings, setSettings }) {
-  const [theme, setTheme] = useState();
-  const [iconStyle, setIconStyle] = useState();
+  const [theme, setTheme] = useState("light");
+  const [iconStyle, setIconStyle] = useState("outline");
 
   function borderRadiusHandler(e) {
     const brValue = e.currentTarget.value / 100;
@@ -14,72 +17,81 @@ function SettingsForm({ settings, setSettings }) {
   function settingsHandler(property, value) {
     const nextSettings = {
       ...settings,
-      // theme: value,
     };
-    nextSettings[property] = value
-    console.log(nextSettings)
+    nextSettings[property] = value;
     setSettings(nextSettings);
+  }
+
+  const setFunctionsNames = {
+    theme: setTheme,
+    iconStyle: setIconStyle,
+  };
+
+  function onChangeFunc(e, prop) {
+    const value = e.target.value;
+
+    if (setFunctionsNames[prop]) {
+      setFunctionsNames[prop](value);
+      settingsHandler(prop, e.target.value);
+    } else {
+      console.error(`No function found for property: ${prop}`);
+    }
   }
 
   return (
     <form>
-      <fieldset>
+      <fieldset className={styles.fieldset}>
         <legend>tema</legend>
-        <LabelRadioIcon>claro</LabelRadioIcon>
-        <label htmlFor="light">claro</label>
-        <input
-          checked={theme === "light"}
-          type="radio"
-          name="theme"
-          id="light"
-          value="light"
-          onChange={(e) => {
-            setTheme(e.target.value);
-            settingsHandler('theme', e.target.value);
-          }}
-        />
-        <label htmlFor="dark">oscuro</label>
-        <input
-          checked={theme === "dark"}
-          type="radio"
-          name="theme"
-          id="dark"
-          value="dark"
-          onChange={(e) => {
-            setTheme(e.target.value);
-            settingsHandler('theme', e.target.value);
-          }}
-        />
+        <div className={styles.radioGroup}>
+          <InputGroupRadio
+            stateVar={theme}
+            iconName="sun"
+            settings={settings}
+            nameProp="theme"
+            valueProp="light"
+            onChangeFunction={onChangeFunc}
+          >
+            claro
+          </InputGroupRadio>
+          <InputGroupRadio
+            stateVar={theme}
+            iconName="moon"
+            settings={settings}
+            nameProp="theme"
+            valueProp="dark"
+            onChangeFunction={onChangeFunc}
+          >
+            oscuro
+          </InputGroupRadio>
+        </div>
       </fieldset>
 
-      <fieldset>
+      <fieldset className={styles.fieldset}>
         <legend>estilo de íconos</legend>
-        <label htmlFor="outline">contorno</label>
-        <input
-          checked={iconStyle === "outline"}
-          value="outline"
-          type="radio"
-          name="icon-style"
-          id="outline"
-          onChange={(e) => {
-            setIconStyle(e.target.value)
-            settingsHandler('icon', e.target.value)
-          }}
-        />
-        <label htmlFor="solid">relleno</label>
-        <input
-          checked={iconStyle === "solid"}
-          value="solid"
-          type="radio"
-          name="icon-style"
-          id="solid"
-          onChange={(e) => {
-            setIconStyle(e.target.value)
-            settingsHandler('icon', e.target.value)
-          }}
-        />
+        <div className={styles.radioGroup}>
+          <InputGroupRadio
+            stateVar={iconStyle}
+            iconName="power"
+            settings={settings}
+            nameProp="iconStyle"
+            valueProp="outline"
+            onChangeFunction={onChangeFunc}
+          >
+            contorno
+          </InputGroupRadio>
+          <InputGroupRadio
+            stateVar={iconStyle}
+            iconName="power"
+            settings={settings}
+            nameProp="iconStyle"
+            valueProp="solid"
+            onChangeFunction={onChangeFunc}
+          >
+            sólido
+          </InputGroupRadio>
+        </div>
       </fieldset>
-      <fieldset>
+      <fieldset className={styles.fieldset}>
         <label htmlFor="border-radius">border-radius</label>
         <input
           type="range"

@@ -1,0 +1,7 @@
+.radio {
+  position: absolute;
+  opacity: 0;
+}
+.inputGroupRadio {
+  width: 100%;
+}

@@ -1,11 +1,11 @@
 import Icon from "../Icon/Icon.jsx"
 import styles from "./LabelRadioIcon.module.css"
 
-function LabelRadioIcon({htmlForProp, children}) {
+function LabelRadioIcon({htmlForProp, settings, iconName, isChecked, children}) {
   return (
-    <label className={styles.labelRadioIcon} htmlFor={htmlForProp}>
+    <label className={`${styles.labelRadioIcon} ${isChecked ? styles.selectedLabel : undefined}`} htmlFor={htmlForProp}>
     <div className={styles.iconContainer}>
-      <Icon type='outline' theme='light' name='sun'/>
+      <Icon type={settings.iconStyle} theme={settings.theme} name={iconName}/>
     </div>
     <span>{children}</span>
     </label>

@@ -1,6 +1,19 @@
+.radioGroup {
+  display: flex;
+  justify-content: stretch;
+  gap: 1.375rem
+}
+
 .rangeValues {
   display: flex;
   justify-content: space-between;
   font-size: 0.75rem;
   color: var(--clr-accent-950-40);
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-block-end: 1.125rem;
 }
