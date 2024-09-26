@@ -1,8 +1,22 @@
+import React, { useState } from "react";
+import DashboardSidebar from "./components/DashboardSidebar/DashboardSidebar.jsx";
+import SettingsForm from "./components/SettingsForm/SettingsForm.jsx";
+
 function App() {
+  const initialSettings = {
+    accentColor: "#CBB9F9",
+    theme: "light",
+    icon: "outline",
+    borderRadius: 1,
+  };
+  const [settings, setSettings] = useState(initialSettings);
 
   return (
-    <div>App</div>
-  )
+    <main style={{backgroundColor: `var(--theme-${settings.theme})`}}>
+      <SettingsForm setSettings={setSettings} settings={settings} />
+      <DashboardSidebar settings={settings}/>
+    </main>
+  );
 }
 
-export default App
+export default App;

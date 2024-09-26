@@ -1,0 +1,6 @@
+.rangeValues {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--clr-accent-950-40);
+}

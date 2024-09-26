@@ -1,0 +1,18 @@
+.sidebarLink {
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+  padding-block: 0.5rem;
+  padding-inline: 2rem;
+}
+
+.sidebarLink.selected {
+  background-color: var(--clr-accent-200);
+  color: var(--clr-accent-900);
+  font-weight: 800;
+}
+
+.iconContainer {
+  display: grid;
+  place-content: center;
+}

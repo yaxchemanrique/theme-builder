@@ -1,0 +1,15 @@
+.labelRadioIcon {
+  padding-inline: 1.5rem;
+  padding-block: 0.75rem;
+  border: 1px solid var(--clr-accent-400);
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--br);
+}
+
+.iconContainer {
+  display: grid;
+  place-content: center;
+}

@@ -1,0 +1,43 @@
+.dashboardSidebar {
+  background-color: var(--clr-accent-200);
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  border-radius: var(--br);
+}
+
+.profileInfoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 2rem;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileName {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.profileEmail {
+  font-size: 0.875rem;
+  color: var(--clr-accent-950-70);
+}
+
+.sidebarSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sectionTitle {
+  text-transform: uppercase;
+  color: var(--clr-accent-400);
+  padding-inline: 2rem;
+  font-weight: 800;
+}
