@@ -1,0 +1,20 @@
+.colorCardsContainerInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.colorCardsContainerInfo button {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  color: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.colorsContainer {
+  display: flex;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}

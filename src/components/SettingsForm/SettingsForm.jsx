@@ -1,16 +1,17 @@
 import { useState } from "react";
 
-import LabelRadioIcon from "../LabelRadioIcon/LabelRadioIcon.jsx";
 import InputGroupRadio from "../InputGroupRadio/InputGroupRadio.jsx";
 
 import styles from "./SettingsForm.module.css";
 
-function SettingsForm({ settings, setSettings }) {
+function SettingsForm({ settings, setSettings, accentColor, setAccentColor }) {
   const [theme, setTheme] = useState("light");
   const [iconStyle, setIconStyle] = useState("outline");
+  const [borderRadius, setBorderRadius] = useState(100)
 
   function borderRadiusHandler(e) {
     const brValue = e.currentTarget.value / 100;
+    setBorderRadius(e.currentTarget.value)
     document.documentElement.style.setProperty("--br", `${brValue}rem`);
   }
 
@@ -23,6 +24,7 @@ function SettingsForm({ settings, setSettings }) {
   }
 
   const setFunctionsNames = {
+    accentColor: setAccentColor,
     theme: setTheme,
     iconStyle: setIconStyle,
   };
@@ -38,8 +40,27 @@ function SettingsForm({ settings, setSettings }) {
     }
   }
 
+  const settingsSolidIcon = {
+    ...settings,
+    iconStyle: "solid",
+  };
+
+  const settingsOutlineIcon = {
+    ...settings,
+    iconStyle: "outline",
+  };
+
   return (
     <form>
+      <input
+        type="color"
+        name="colorPicker"
+        id="colorPicker"
+        value={accentColor}
+        onChange={(e) => {
+          onChangeFunc(e, 'accentColor');
+        }}
+      />
       <fieldset className={styles.fieldset}>
         <legend>tema</legend>
         <div className={styles.radioGroup}>
@@ -72,7 +93,7 @@ function SettingsForm({ settings, setSettings }) {
           <InputGroupRadio
             stateVar={iconStyle}
             iconName="power"
-            settings={settings}
+            settings={settingsOutlineIcon}
             nameProp="iconStyle"
             valueProp="outline"
             onChangeFunction={onChangeFunc}
@@ -82,7 +103,7 @@ function SettingsForm({ settings, setSettings }) {
           <InputGroupRadio
             stateVar={iconStyle}
             iconName="power"
-            settings={settings}
+            settings={settingsSolidIcon}
             nameProp="iconStyle"
             valueProp="solid"
             onChangeFunction={onChangeFunc}
@@ -92,13 +113,14 @@ function SettingsForm({ settings, setSettings }) {
         </div>
       </fieldset>
       <fieldset className={styles.fieldset}>
-        <label htmlFor="border-radius">border-radius</label>
+        <label htmlFor="border-radius">border-radius: {borderRadius / 100}rem</label>
         <input
           type="range"
           id="border-radius"
           defaultValue={100}
           min={0}
           max={200}
+          value={borderRadius}
           onChange={borderRadiusHandler}
         />
         <div className={styles.rangeValues}>

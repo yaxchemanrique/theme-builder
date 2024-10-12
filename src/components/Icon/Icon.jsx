@@ -1,14 +1,16 @@
-function Icon({ type, theme, name, color = 'default' }) {
+function Icon({ type, theme, name, color = "default" }) {
   let fillColor = "";
-  
-  if (color==='default' && theme === "light" && name === "other")
+
+  if (color === "default" && theme === "light" && name === "other")
     fillColor = "var(--clr-accent-50)";
-  if (color==='default' && theme === "dark" && name === "other") fillColor = "var(--clr-accent-400)";
-  if (color==='default' && theme === "light" && name !== "other")
-    fillColor = "var(--clr-accent-950)";
-  if (color==='default' && theme === "dark" && name !== "other") fillColor = "var(--clr-accent-50)";
-  
-  if (color !== 'default') {
+  if (color === "default" && theme === "dark" && name === "other")
+    fillColor = "var(--clr-accent-400)";
+  if (color === "default" && theme === "light" && name !== "other")
+    fillColor = "var(--clr-accent-800)";
+  if (color === "default" && theme === "dark" && name !== "other")
+    fillColor = "var(--clr-accent-50)";
+
+  if (color !== "default") {
     fillColor = `var(--clr-accent-${color})`;
   }
 
@@ -578,7 +580,7 @@ function Icon({ type, theme, name, color = 'default' }) {
           />
         </svg>
       );
-    
+
     case "solid-settings":
       return (
         <svg
@@ -600,7 +602,7 @@ function Icon({ type, theme, name, color = 'default' }) {
           />
         </svg>
       );
-    
+
     case "solid-lock":
       return (
         <svg
@@ -618,7 +620,7 @@ function Icon({ type, theme, name, color = 'default' }) {
           />
         </svg>
       );
-    
+
     case "solid-other":
       return (
         <svg

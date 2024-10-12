@@ -1,5 +1,5 @@
 .dashboardSidebar {
-  background-color: var(--clr-accent-200);
+  background-color: var(--clr-accent-100);
   width: fit-content;
   display: flex;
   flex-direction: column;
