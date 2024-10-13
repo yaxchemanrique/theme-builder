@@ -1,5 +1,6 @@
 .dashboardSidebar {
-  background-color: var(--clr-accent-100);
+  background-color: var(--clr-surface-1);
+  color: var(--clr-text-1);
   width: fit-content;
   display: flex;
   flex-direction: column;
@@ -26,7 +27,7 @@
 
 .profileEmail {
   font-size: 0.875rem;
-  color: var(--clr-accent-950-70);
+  color: var(--clr-text-2);
 }
 
 .sidebarSection {
@@ -37,7 +38,21 @@
 
 .sectionTitle {
   text-transform: uppercase;
-  color: var(--clr-accent-400);
+  color: var(--clr-text-3);
   padding-inline: 2rem;
   font-weight: 800;
+}
+
+.theme-dark {
+  --clr-surface-1: var(--clr-accent-950);
+  --clr-text-1: var(--clr-accent-50);
+  --clr-text-2: var(--clr-accent-50-70);
+  --clr-text-3: var(--clr-accent-400);
+}
+
+.theme-light {
+  --clr-surface-1: var(--clr-accent-50);
+  --clr-text-1: var(--clr-accent-950);
+  --clr-text-2: var(--clr-accent-950-70);
+  --clr-text-3: var(--clr-accent-400);
 }

@@ -7,12 +7,22 @@
 }
 
 .sidebarLink.selected {
-  background-color: var(--clr-accent-200);
-  color: var(--clr-accent-900);
+  background-color: var(--clr-surface-1);
+  color: var(--clr-text-1);
   font-weight: 800;
 }
 
 .iconContainer {
   display: grid;
   place-content: center;
+}
+
+.dark {
+  --clr-surface-1: var(--clr-accent-50-10);
+  --clr-text-1: var(--clr-accent-300);
+}
+
+.light {
+  --clr-surface-1: var(--clr-accent-200);
+  --clr-text-1: var(--clr-accent-900);
 }

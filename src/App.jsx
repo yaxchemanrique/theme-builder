@@ -18,7 +18,7 @@ function App() {
 
   const [settings, setSettings] = useState(initialSettings);
   const themeColors = createThemeArr(settings.accentColor);
-  console.log(themeColors);
+  // console.log(themeColors);
 
   useEffect(() => {
     for (let i = 0; i < themeColors.length; i++) {
@@ -35,7 +35,7 @@ function App() {
   }, [accentColor]);
 
   return (
-    <main style={{ backgroundColor: `var(--theme-${settings.theme})` }}>
+    <main style={{ backgroundColor: `var(--theme-${settings.theme}-bg)` }}>
       <SettingsForm
         setSettings={setSettings}
         settings={settings}
