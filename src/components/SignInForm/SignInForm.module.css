@@ -1,0 +1,58 @@
+.signInForm {
+  background-color: var(--clr-surface-1);
+  border-radius: var(--br);
+  padding: var(--component-padding);
+}
+
+.fromTitle {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.fromTitle p {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.inputsContainer input {
+  background-color: var(--clr-surface-2);
+  border: 1px solid var(--clr-accent-400);
+  padding: 1rem;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 0.4rem;
+}
+
+.inputsContainer input::placeholder {
+  color: var(--clr-text-2);
+}
+
+.inputsContainer button {
+  padding-block: 1rem;
+  background-color: var(--clr-accent-400);
+  color: var(--clr-accent-50);
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: 800;
+  border: none;
+  border-radius: 0.4rem;
+}
+
+.light {
+  --clr-surface-1: var(--clr-accent-50);
+  --clr-surface-2: transparent;
+  --clr-text-2: var(--clr-accent-950-30);
+}
+
+.dark {
+  --clr-surface-1: var(--clr-accent-950);
+  --clr-surface-2: var(--clr-accent-50-10);
+  --clr-text-2: var(--clr-accent-50-40);
+}
