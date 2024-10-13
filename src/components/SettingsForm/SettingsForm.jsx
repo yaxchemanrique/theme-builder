@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 
 import { ThemeContext } from "../../context/ThemeProvider.jsx";
 
@@ -7,52 +7,16 @@ import InputGroupRadio from "../InputGroupRadio/InputGroupRadio.jsx";
 import styles from "./SettingsForm.module.css";
 
 function SettingsForm() {
-  const { settings, setSettings, accentColor, setAccentColor } = useContext(ThemeContext);
-
-  const [theme, setTheme] = useState("light");
-  const [iconStyle, setIconStyle] = useState("outline");
-  const [borderRadius, setBorderRadius] = useState(100)
-
-  function borderRadiusHandler(e) {
-    const brValue = e.currentTarget.value / 100;
-    setBorderRadius(e.currentTarget.value)
-    document.documentElement.style.setProperty("--br", `${brValue}rem`);
-  }
-
-  function settingsHandler(property, value) {
-    const nextSettings = {
-      ...settings,
-    };
-    nextSettings[property] = value;
-    setSettings(nextSettings);
-  }
-
-  const setFunctionsNames = {
-    accentColor: setAccentColor,
-    theme: setTheme,
-    iconStyle: setIconStyle,
-  };
-
-  function onChangeFunc(e, prop) {
-    const value = e.target.value;
-
-    if (setFunctionsNames[prop]) {
-      setFunctionsNames[prop](value);
-      settingsHandler(prop, e.target.value);
-    } else {
-      console.error(`No function found for property: ${prop}`);
-    }
-  }
-
-  const settingsSolidIcon = {
-    ...settings,
-    iconStyle: "solid",
-  };
-
-  const settingsOutlineIcon = {
-    ...settings,
-    iconStyle: "outline",
-  };
+  const {
+    accentColor,
+    setAccentColor,
+    theme,
+    setTheme,
+    iconStyle,
+    setIconStyle,
+    borderRadius,
+    borderRadiusHandler,
+  } = useContext(ThemeContext);
 
   return (
     <form>
@@ -62,7 +26,7 @@ function SettingsForm() {
         id="colorPicker"
         value={accentColor}
         onChange={(e) => {
-          onChangeFunc(e, 'accentColor');
+          setAccentColor(e.target.value);
         }}
       />
       <fieldset className={styles.fieldset}>
@@ -71,20 +35,26 @@ function SettingsForm() {
           <InputGroupRadio
             stateVar={theme}
             iconName="sun"
-            settings={settings}
+            iconTheme={theme}
+            iconStyle={iconStyle}
             nameProp="theme"
             valueProp="light"
-            onChangeFunction={onChangeFunc}
+            onChangeFunction={(e) => {
+              setTheme(e.target.value);
+            }}
           >
             claro
           </InputGroupRadio>
           <InputGroupRadio
             stateVar={theme}
             iconName="moon"
-            settings={settings}
+            iconTheme={theme}
+            iconStyle={iconStyle}
             nameProp="theme"
             valueProp="dark"
-            onChangeFunction={onChangeFunc}
+            onChangeFunction={(e) => {
+              setTheme(e.target.value);
+            }}
           >
             oscuro
           </InputGroupRadio>
@@ -97,31 +67,38 @@ function SettingsForm() {
           <InputGroupRadio
             stateVar={iconStyle}
             iconName="power"
-            settings={settingsOutlineIcon}
+            iconTheme={theme}
+            iconStyle="outline"
             nameProp="iconStyle"
             valueProp="outline"
-            onChangeFunction={onChangeFunc}
+            onChangeFunction={(e) => {
+              setIconStyle(e.target.value);
+            }}
           >
             contorno
           </InputGroupRadio>
           <InputGroupRadio
             stateVar={iconStyle}
             iconName="power"
-            settings={settingsSolidIcon}
+            iconTheme={theme}
+            iconStyle="solid"
             nameProp="iconStyle"
             valueProp="solid"
-            onChangeFunction={onChangeFunc}
+            onChangeFunction={(e) => {
+              setIconStyle(e.target.value);
+            }}
           >
             sólido
           </InputGroupRadio>
         </div>
       </fieldset>
       <fieldset className={styles.fieldset}>
-        <label htmlFor="border-radius">border-radius: {borderRadius / 100}rem</label>
+        <label htmlFor="border-radius">
+          border-radius: {borderRadius / 100}rem
+        </label>
         <input
           type="range"
           id="border-radius"
-          defaultValue={100}
           min={0}
           max={200}
           value={borderRadius}

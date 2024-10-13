@@ -5,16 +5,11 @@ export const ThemeContext = createContext();
 
 function ThemeProvider({ children }) {
   const [accentColor, setAccentColor] = useState("#6f4fbb");
+  const [theme, setTheme] = useState("light");
+  const [iconStyle, setIconStyle] = useState("outline");
+  const [borderRadius, setBorderRadius] = useState(100);
 
-  const initialSettings = {
-    accentColor,
-    theme: "light",
-    iconStyle: "outline",
-    borderRadius: 1,
-  };
-
-  const [settings, setSettings] = useState(initialSettings);
-  const themeColors = createThemeArr(settings.accentColor);
+  const themeColors = createThemeArr(accentColor);
 
   useEffect(() => {
     for (let i = 0; i < themeColors.length; i++) {
@@ -50,15 +45,27 @@ function ThemeProvider({ children }) {
     );
   }, [accentColor]);
 
+  function borderRadiusHandler(e) {
+    const brValue = e.currentTarget.value / 100;
+    setBorderRadius(e.currentTarget.value);
+    document.documentElement.style.setProperty("--br", `${brValue}rem`);
+  }
+
   const value = {
+    themeColors,
     accentColor,
     setAccentColor,
-    settings,
-    setSettings,
-    themeColors
+    theme,
+    setTheme,
+    iconStyle,
+    setIconStyle,
+    borderRadius,
+    borderRadiusHandler,
   };
 
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  );
 }
 
 export default ThemeProvider;

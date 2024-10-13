@@ -4,7 +4,8 @@ import styles from "./InputGroupRadio.module.css"
 function InputGroupRadio({
   stateVar,
   iconName,
-  settings,
+  iconStyle,
+  iconTheme,
   nameProp,
   valueProp,
   onChangeFunction,
@@ -25,7 +26,8 @@ function InputGroupRadio({
       <LabelRadioIcon
         htmlForProp={valueProp}
         iconName={iconName}
-        settings={settings}
+        iconTheme={iconTheme}
+        iconStyle={iconStyle}
         isChecked={isChecked}
       >
         {children}

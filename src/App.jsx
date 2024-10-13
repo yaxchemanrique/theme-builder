@@ -9,13 +9,13 @@ import DashboardSidebar from "./components/DashboardSidebar/DashboardSidebar.jsx
 import "./styles.css"
 
 function App() {
-  const { settings, themeColors } = useContext(ThemeContext);
+  const { theme, themeColors } = useContext(ThemeContext);
 
   return (
-    <main className={settings.theme} >
+    <main className={theme} >
       <SettingsForm />
       <ColorCardsContainer themeColors={themeColors} />
-      <DashboardSidebar settings={settings} />
+      <DashboardSidebar />
     </main>
   );
 }
