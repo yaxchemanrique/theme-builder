@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 import { ThemeContext } from "./context/ThemeProvider.jsx";
 
@@ -11,12 +11,12 @@ import UserSelection from "./components/UserSelection/UserSelection.jsx";
 import SignInForm from "./components/SignInForm/SignInForm.jsx";
 
 function App() {
-  const { theme, themeColors } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <main className={theme} >
       <SettingsForm />
-      <ColorCardsContainer themeColors={themeColors} />
+      <ColorCardsContainer />
       <SignInForm />
       <UserSelection />
       <DashboardSidebar />

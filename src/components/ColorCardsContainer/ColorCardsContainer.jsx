@@ -1,8 +1,12 @@
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeProvider.jsx";
 import ColorCard from "../ColorCard/ColorCard.jsx";
 import styles from "./ColorCardsContainer.module.css";
 
-function ColorCardsContainer({ themeColors }) {
-  const cardsThemeColors = themeColors.slice(1, -1)
+function ColorCardsContainer() {
+  const {themeColors} = useContext(ThemeContext);
+  const cardsThemeColors = themeColors.slice(1, -1);
+
   return (
     <div className={styles.colorCardsContainer}>
       <div className={styles.colorCardsContainerInfo}>
