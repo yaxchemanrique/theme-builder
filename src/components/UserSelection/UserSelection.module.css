@@ -1,0 +1,67 @@
+.userSelection {
+  border-radius: var(--br);
+  background-color: var(--clr-surface-1);
+  color: var(--clr-text-1);
+  padding: var(--component-padding);
+  width: fit-content;
+}
+
+.buttonSelection {
+  background-color: var(--clr-surface-2);
+  border: 1px solid var(--clr-accent-400);
+  padding-block: 0.75rem;
+  padding-inline: 1.12rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.usersList {
+  background-color: var(--clr-surface-2);
+  border-radius: 0.4rem;
+  padding: 0.75rem;
+  min-width: 17rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 0.75rem;
+}
+
+.user:not(:last-of-type) {
+  border-bottom: solid 1px var(--clr-accent-200);
+}
+
+.userProfilePic {
+  border-radius: 50%;
+  background-color: plum;
+  aspect-ratio: 1;
+  width: 3.25rem;
+}
+
+.userName {
+  font-weight: 700;
+}
+
+.userEmail {
+  color: var(--clr-text-2);
+}
+
+
+
+.light {
+  --clr-surface-1: var(--clr-accent-50);
+  --clr-surface-2: transparent;
+  --clr-text-1: var(--clr-accent-950);
+  --clr-text-2: var(--clr-accent-950-70);
+}
+
+.dark {
+  --clr-surface-1: var(--clr-accent-950);
+  --clr-surface-2: var(--clr-accent-50-10);
+  --clr-text-1: var(--clr-accent-50);
+  --clr-text-2: var(--clr-accent-50-70);
+}

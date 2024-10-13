@@ -7,6 +7,7 @@ import ColorCardsContainer from "./components/ColorCardsContainer/ColorCardsCont
 import DashboardSidebar from "./components/DashboardSidebar/DashboardSidebar.jsx";
 
 import "./styles.css"
+import UserSelection from "./components/UserSelection/UserSelection.jsx";
 
 function App() {
   const { theme, themeColors } = useContext(ThemeContext);
@@ -15,6 +16,7 @@ function App() {
     <main className={theme} >
       <SettingsForm />
       <ColorCardsContainer themeColors={themeColors} />
+      <UserSelection />
       <DashboardSidebar />
     </main>
   );
