@@ -2,6 +2,7 @@ import Icon from "../Icon/Icon.jsx"
 import styles from "./LabelRadioIcon.module.css"
 
 function LabelRadioIcon({htmlForProp, settings, iconName, isChecked, children}) {
+
   const className = `${styles[settings.theme]} ${styles.labelRadioIcon} ${isChecked ? styles.selectedLabel : ''}`;
 
   return (

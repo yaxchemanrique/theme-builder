@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import { ThemeContext } from "../../context/ThemeProvider.jsx";
 
 import InputGroupRadio from "../InputGroupRadio/InputGroupRadio.jsx";
 
 import styles from "./SettingsForm.module.css";
 
-function SettingsForm({ settings, setSettings, accentColor, setAccentColor }) {
+function SettingsForm() {
+  const { settings, setSettings, accentColor, setAccentColor } = useContext(ThemeContext);
+
   const [theme, setTheme] = useState("light");
   const [iconStyle, setIconStyle] = useState("outline");
   const [borderRadius, setBorderRadius] = useState(100)
