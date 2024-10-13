@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
-import DashboardSidebar from "./components/DashboardSidebar/DashboardSidebar.jsx";
+import { useEffect, useState } from "react";
+import { createThemeArr } from "./components/colorUtils.js";
+
 import SettingsForm from "./components/SettingsForm/SettingsForm.jsx";
 import ColorCardsContainer from "./components/ColorCardsContainer/ColorCardsContainer.jsx";
-import { createThemeArr } from "./components/colorUtils.js";
+import DashboardSidebar from "./components/DashboardSidebar/DashboardSidebar.jsx";
+
+import "./styles.css"
 
 function App() {
   const [accentColor, setAccentColor] = useState("#6f4fbb");
 
   const initialSettings = {
     accentColor: accentColor,
-    // accentColor: "#ff0000",
-    // accentColor: "#cf9f1d",
     theme: "light",
     iconStyle: "outline",
     borderRadius: 1,
@@ -18,7 +19,6 @@ function App() {
 
   const [settings, setSettings] = useState(initialSettings);
   const themeColors = createThemeArr(settings.accentColor);
-  // console.log(themeColors);
 
   useEffect(() => {
     for (let i = 0; i < themeColors.length; i++) {
@@ -35,7 +35,7 @@ function App() {
   }, [accentColor]);
 
   return (
-    <main style={{ backgroundColor: `var(--theme-${settings.theme}-bg)` }}>
+    <main className={settings.theme} >
       <SettingsForm
         setSettings={setSettings}
         settings={settings}

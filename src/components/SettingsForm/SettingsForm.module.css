@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.75rem;
-  color: var(--clr-accent-950-40);
+  color: var(--clr-text-1);
 }
 
 .fieldset {
@@ -16,4 +16,20 @@
   flex-direction: column;
   gap: 0.5rem;
   margin-block-end: 1.125rem;
+}
+
+.fieldset [type='range'] {
+  cursor: grab;
+}
+
+.fieldset [type='range']:active {
+  cursor: grabbing;
+}
+
+.dark {
+  --clr-text-1: var(--clr-accent-50-40);
+}
+
+.light {
+  --clr-text-1: var(--clr-accent-950-40);
 }

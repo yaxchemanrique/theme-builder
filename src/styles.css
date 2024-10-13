@@ -1,0 +1,15 @@
+main {
+  background-color: var(--bg);
+  color: var(--text);
+  accent-color: var(--clr-accent-400);
+}
+
+.light {
+  --bg: var(--clr-accent-0);
+  --text: var(--clr-accent-950);
+}
+
+.dark {
+  --bg : var(--clr-accent-1000);
+  --text: var(--clr-accent-50);
+}
