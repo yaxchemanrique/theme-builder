@@ -1,0 +1,86 @@
+.pricing {
+  padding: 2rem;
+  border-radius: var(--br);
+  color: var(--text-clr);
+  background-color: var(--component-bg);
+}
+
+.pricing header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.content h3 {
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.content ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.content li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.content section {
+  background-color: var(--section-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 3.25rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border-radius: var(--br);
+  color: var(--text-clr);
+}
+
+.content a {
+  background-color: var(--button-bg);
+  padding: 1rem 1.4rem;
+  text-decoration: none;
+  color: var(--button-text);
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-radius: 0.25rem;
+}
+
+.light {
+  --component-bg: var(--clr-accent-50);
+  --section-bg: var(--clr-accent-100);
+  --text-clr: var(--clr-accent-950);
+  --button-text: var(--clr-accent-950);
+  --button-bg: var(--clr-accent-200);
+}
+
+.light .accent {
+  --section-bg: var(--clr-accent-300);
+  --text-clr: var(--clr-accent-950);
+  --button-text: var(--clr-accent-50);
+  --button-bg: var(--clr-accent-950);
+}
+
+.dark {
+  --component-bg: var(--clr-accent-950);
+  --section-bg: var(--clr-accent-50-10);
+  --text-clr: var(--clr-accent-50);
+  --button-text: var(--clr-accent-50);
+  --button-bg: var(--clr-accent-950);
+}
+
+.dark .accent {
+  --section-bg: var(--clr-accent-200);
+  --text-clr: var(--clr-accent-950);
+  --button-text: var(--clr-accent-50);
+  --button-bg: var(--clr-accent-800);
+}
