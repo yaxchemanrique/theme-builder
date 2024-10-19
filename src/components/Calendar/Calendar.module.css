@@ -1,0 +1,69 @@
+.calendar {
+  background-color: var(--component-bg);
+  border-radius: var(--br);
+  padding: 2rem;
+}
+
+.calendar nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.calendar button {
+  background-color: transparent;
+  border: none;
+}
+
+.weekLabels,
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+}
+
+.weekLabels {
+  border-bottom: solid 1px var(--label-border);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-labels);
+}
+
+.days span {
+  display: block;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  padding: 0.5rem;
+}
+
+.previousDays,
+.nextDays {
+  color: var(--inactive-days);
+}
+
+.highlighted {
+  background-color: var(--highlight-bg);
+  color: var(--highlight-text);
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.light {
+  --component-bg: var(--clr-accent-50);
+  --text-labels: var(--clr-accent-950-70);
+  --label-border: var(--clr-accent-950-40);
+  --inactive-days: var(--clr-accent-950-40);
+  --highlight-bg: var(--clr-accent-400);
+  --highlight-text: var(--clr-accent-50);
+}
+
+.dark {
+  --component-bg: var(--clr-accent-950);
+  --text-labels: var(--clr-accent-50-70);
+  --label-border: var(--clr-accent-50);
+  --inactive-days: var(--clr-accent-50-40);
+  --highlight-bg: var(--clr-accent-500);
+  --highlight-text: var(--clr-accent-50);
+}

@@ -10,6 +10,7 @@ import SignInForm from "./components/SignInForm/SignInForm.jsx";
 import Pricing from './components/Pricing/Pricing.jsx'
 
 import "./styles.css"
+import Calendar from "./components/Calendar/Calendar.jsx";
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -18,6 +19,7 @@ function App() {
     <main className={theme} >
       <SettingsForm />
       <ColorCardsContainer />
+      <Calendar />
       <Pricing />
       <SignInForm />
       <UserSelection />
