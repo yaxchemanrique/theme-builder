@@ -13,3 +13,35 @@ main {
   --bg : var(--clr-accent-1000);
   --text: var(--clr-accent-50);
 }
+
+.wrapper {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 2rem;
+}
+
+.componentContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.componentContainer > :nth-child(1) {
+  grid-row: span 2;
+}
+
+.componentContainer > :nth-child(2) {
+  grid-row: span 1;
+}
+
+.componentContainer > :nth-child(3) {
+  grid-row: span 1;
+}
+
+.componentContainer > :nth-child(4) {
+  grid-column: span 3;
+}
+
+.componentContainer > :nth-child(6) {
+  grid-column: span 2;
+}

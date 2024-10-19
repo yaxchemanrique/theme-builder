@@ -1,7 +1,6 @@
 .dashboardSidebar {
   background-color: var(--clr-surface-1);
   color: var(--clr-text-1);
-  width: fit-content;
   display: flex;
   flex-direction: column;
   gap: 3rem;

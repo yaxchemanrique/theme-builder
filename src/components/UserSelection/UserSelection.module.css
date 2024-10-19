@@ -3,7 +3,6 @@
   background-color: var(--clr-surface-1);
   color: var(--clr-text-1);
   padding: var(--component-padding);
-  width: fit-content;
 }
 
 .buttonSelection {
