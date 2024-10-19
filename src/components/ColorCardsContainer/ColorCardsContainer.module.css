@@ -1,6 +1,11 @@
+.colorCardsContainer {
+  margin-bottom: 5rem;
+}
+
 .colorCardsContainerInfo {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1.2rem;
 }
 
 .colorCardsContainerInfo button {

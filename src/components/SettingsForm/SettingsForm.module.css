@@ -1,3 +1,7 @@
+.settingsForm {
+  margin-bottom: 3.25rem;
+}
+
 .radioGroup {
   display: flex;
   justify-content: stretch;

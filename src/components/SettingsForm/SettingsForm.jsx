@@ -19,7 +19,7 @@ function SettingsForm() {
   } = useContext(ThemeContext);
 
   return (
-    <form>
+    <form className={styles.settingsForm}>
       <input
         type="color"
         name="colorPicker"
