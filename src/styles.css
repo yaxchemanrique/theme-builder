@@ -56,10 +56,10 @@ main {
   grid-row: span 1;
 }
 
-.componentContainer> :nth-child(4) {
+.componentContainer> :nth-child(5) {
   grid-column: span 3;
 }
 
-.componentContainer> :nth-child(6) {
+.componentContainer> :nth-child(7) {
   grid-column: span 2;
 }

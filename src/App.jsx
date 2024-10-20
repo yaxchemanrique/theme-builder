@@ -10,6 +10,7 @@ import SignInForm from "./components/SignInForm/SignInForm.jsx";
 import Pricing from "./components/Pricing/Pricing.jsx";
 import Calendar from "./components/Calendar/Calendar.jsx";
 import CreateAccount from "./components/CreateAccount/CreateAccount.jsx";
+import BarGraph from './components/BarGraph/BarGraph.jsx'
 
 import "./styles.css";
 
@@ -25,6 +26,7 @@ function App() {
           <DashboardSidebar />
           <UserSelection />
           <SignInForm />
+          <BarGraph />
           <Pricing />
           <Calendar />
           <CreateAccount />
