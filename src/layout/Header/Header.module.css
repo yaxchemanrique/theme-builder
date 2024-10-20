@@ -9,7 +9,7 @@
 .header {
   background-color: var(--bg);
   min-height: 20rem;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
   background-image: linear-gradient(180deg, var(--brand-clr-100-100) 90.27%, var(--brand-clr-100-0) 100%)
 }
 
@@ -48,7 +48,8 @@
     4.4px 8.8px 11.7px hsl(var(--shadow-color) / 0.29);
 
   text-transform: uppercase;
-  font-size: 1.6rem;
+  font-size: 2.4rem;
+  letter-spacing: 3px;
   font-weight: 900;
   text-align: center;
   line-height: 0.85;
@@ -73,7 +74,7 @@
   background-color: black;
   color: white;
   font-style: normal;
-  font-size: 0.8rem;
+  font-size: 1.125rem;
   width: fit-content;
   padding: 0.25rem;
   position: absolute;
