@@ -4,6 +4,9 @@
   --theme-light-bg: var(--clr-accent-0);
   --theme-dark-bg: var(--clr-accent-1000);
 
+  --brand-clr-100-100: hsla(255, 100%, 96%, 1);
+  --brand-clr-100-0: hsla(255, 100%, 96%, 0);
+  
   --br: 1rem;
   --component-padding: 2rem;
 }

@@ -1,0 +1,64 @@
+.light {
+  --bg: var(--clr-accent-0);
+}
+
+.dark {
+  --bg: var(--clr-accent-1000);
+}
+
+.footer {
+  background-color: var(--bg);
+  min-height: 30rem;
+  background-image: linear-gradient(0deg, var(--brand-clr-100-100) 85%, var(--brand-clr-100-0) 100%);
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  transform: translateY(55%);
+}
+
+.meshTitle {
+  position: relative;
+  transform: translateY(-30%);
+}
+
+.authorTag {
+  background-color: black;
+  color: white;
+  font-style: normal;
+  font-size: 0.8rem;
+  width: fit-content;
+  padding: 0.25rem;
+  margin-inline: auto;
+}
+
+.footer ul {
+  width: 90vw;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  transform: translateY(-60px);
+  margin-top: 2rem;
+}
+
+.footer li {
+  width: fit-content;
+  aspect-ratio: 1;
+  background-color: black;
+  padding: 0.5rem;
+  scale: 1.4;
+  transition: all ease-in-out 200ms;
+}
+
+.footer li a {
+  display: grid;
+  place-content: center;
+}
+
+.footer li:hover {
+  scale: 1.45;
+}
