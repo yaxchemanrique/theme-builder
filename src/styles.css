@@ -7,11 +7,13 @@ main {
 .light {
   --bg: var(--clr-accent-0);
   --text: var(--clr-accent-950);
+  --shadow-color: var(--clr-shadow-light);
 }
 
 .dark {
-  --bg : var(--clr-accent-1000);
+  --bg: var(--clr-accent-1000);
   --text: var(--clr-accent-50);
+  --shadow-color: var(--clr-shadow-dark);
 }
 
 .wrapper {
@@ -23,25 +25,41 @@ main {
 .componentContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: 1.8rem;
+
+  --shadow-elevation-high:
+    0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.15),
+    0.4px 0.8px 0.8px -0.5px hsl(var(--shadow-color) / 0.15),
+    0.6px 1.2px 1.2px -0.9px hsl(var(--shadow-color) / 0.15),
+    1px 2px 1.9px -1.4px hsl(var(--shadow-color) / 0.15),
+    1.7px 3.3px 3.2px -1.9px hsl(var(--shadow-color) / 0.15),
+    2.7px 5.4px 5.2px -2.4px hsl(var(--shadow-color) / 0.09),
+    4.2px 8.4px 8.1px -2.8px hsl(var(--shadow-color) / 0.07),
+    6.3px 12.5px 12.1px -3.3px hsl(var(--shadow-color) / 0.04),
+    9px 18px 17.4px -3.8px hsl(var(--shadow-color) / 0.08),
+    12.5px 25px 24.1px -4.2px hsl(var(--shadow-color) / 0.06);
 }
 
-.componentContainer > :nth-child(1) {
+.componentContainer>* {
+  box-shadow: var(--shadow-elevation-high);
+}
+
+.componentContainer> :nth-child(1) {
   grid-row: span 2;
 }
 
-.componentContainer > :nth-child(2) {
+.componentContainer> :nth-child(2) {
   grid-row: span 1;
 }
 
-.componentContainer > :nth-child(3) {
+.componentContainer> :nth-child(3) {
   grid-row: span 1;
 }
 
-.componentContainer > :nth-child(4) {
+.componentContainer> :nth-child(4) {
   grid-column: span 3;
 }
 
-.componentContainer > :nth-child(6) {
+.componentContainer> :nth-child(6) {
   grid-column: span 2;
 }

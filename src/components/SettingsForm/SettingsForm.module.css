@@ -1,5 +1,29 @@
 .settingsForm {
   margin-bottom: 3.25rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+}
+
+.colorPickerContainer p {
+  margin-bottom: 0.5rem;
+}
+
+.hexCodeGroup,
+.rangeInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-block-end: 1.125rem;
+}
+
+.hexCodeGroup input {
+  padding: 0.88rem;
+  border-radius: var(--br);
+  border: solid 1px var(--input-border);
+  font-family: inherit;
+  background-color: var(--input-bg);
+  color: var(--input-text);
 }
 
 .radioGroup {
@@ -16,10 +40,11 @@
 }
 
 .fieldset {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
   margin-block-end: 1.125rem;
+}
+
+.fieldset legend {
+  margin-bottom: 0.5rem;
 }
 
 .fieldset [type='range'] {
@@ -32,8 +57,14 @@
 
 .dark {
   --clr-text-1: var(--clr-accent-50-40);
+  --input-border: var(--clr-accent-400);
+  --input-bg: transparent;
+  --input-text: var(--clr-accent-50);
 }
 
 .light {
   --clr-text-1: var(--clr-accent-950-40);
+  --input-border: var(--clr-accent-400);
+  --input-bg: transparent;
+  --input-text: var(--clr-accent-950);
 }

@@ -43,6 +43,14 @@ function ThemeProvider({ children }) {
       `--clr-accent-950-70`,
       themeColors[11].code.slice(0, -1) + " / .7)"
     );
+    document.documentElement.style.setProperty(
+      `--clr-shadow-light`,
+      themeColors[4].code.slice(4, -1)
+    );
+    document.documentElement.style.setProperty(
+      `--clr-shadow-dark`,
+      themeColors[9].code.slice(4, -1)
+    );
   }, [accentColor]);
 
   function borderRadiusHandler(e) {
