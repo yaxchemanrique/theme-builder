@@ -13,6 +13,7 @@ import Pricing from "./components/Pricing/Pricing.jsx";
 import Calendar from "./components/Calendar/Calendar.jsx";
 import CreateAccount from "./components/CreateAccount/CreateAccount.jsx";
 import BarGraph from "./components/BarGraph/BarGraph.jsx";
+import LineGraph from "./components/LineGraph/LineGraph.jsx";
 
 import "./styles.css";
 
@@ -31,6 +32,7 @@ function App() {
             <UserSelection />
             <SignInForm />
             <BarGraph />
+            <LineGraph />
             <Pricing />
             <Calendar />
             <CreateAccount />

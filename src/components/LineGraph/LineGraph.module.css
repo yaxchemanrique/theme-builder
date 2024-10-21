@@ -1,0 +1,115 @@
+.light {
+  --component-bg: var(--clr-accent-50);
+  --dot-clr: var(--clr-accent-400);
+  --line-clr: var(--clr-accent-700);
+}
+.dark {
+  --component-bg: var(--clr-accent-950);
+  --dot-clr: var(--clr-accent-300);
+  --line-clr: var(--clr-accent-500);
+}
+
+.lineGraph {
+  padding: 2rem;
+  border-radius: var(--br);
+  background-color: var(--component-bg);
+}
+
+.textContent h2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.textContent p {
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+.graph {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  height: calc(100% - 2rem - 1lh);
+  align-items: end;
+  --height-1: 5px;
+  --height-2: 5px;
+  --height-3: 3px;
+  --height-4: 7px;
+  --height-5: 5px;
+  --height-6: 4px;
+  --height-7: 6px;
+  --height-8: 18px;
+  --height-9: 5px;
+  --line-width: 1px;
+}
+/*rgba(0, 128, 0, 0.303)*/
+.dataPoint {
+  position: relative;
+  background-image: 
+    linear-gradient(
+      to bottom right, 
+      transparent calc(50% - var(--line-width)), 
+      var(--line-clr) calc(50% - var(--line-width)),
+      var(--line-clr) 50%, 
+      var(--line-clr) calc(50% + var(--line-width)),
+      transparent calc(50% + var(--line-width)));
+}
+
+.dataPoint::after,
+.dataPoint:nth-of-type(1)::before {
+  content: '';
+  z-index: 10;
+  display: block;
+  background: var(--dot-clr);
+  height: 5px;
+  aspect-ratio: 1;
+  position: absolute;
+  border-radius: 100%;
+  border: solid 1.5px var(--component-bg);
+}
+
+.dataPoint::after {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.dataPoint:nth-of-type(1)::before {
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+
+
+.dataPoint:nth-of-type(1) {
+  height: var(--height-1);
+}
+.dataPoint:nth-of-type(2) {
+  height: var(--height-2);
+  bottom: var(--height-1);
+}
+.dataPoint:nth-of-type(3) {
+  height: var(--height-3);
+  bottom: calc(var(--height-1) + var(--height-2));
+}
+.dataPoint:nth-of-type(4) {
+  height: var(--height-4);
+  bottom: calc(var(--height-1) + var(--height-2) + var(--height-3));
+}
+.dataPoint:nth-of-type(5) {
+  height: var(--height-5);
+  bottom: calc(var(--height-1) + var(--height-2) + var(--height-3) + var(--height-4));
+}
+.dataPoint:nth-of-type(6) {
+  height: var(--height-6);
+  bottom: calc(var(--height-1) + var(--height-2) + var(--height-3) + var(--height-4) +  var(--height-5));
+}
+.dataPoint:nth-of-type(7) {
+  height: var(--height-7);
+  bottom: calc(var(--height-1) + var(--height-2) + var(--height-3) + var(--height-4) +  var(--height-5) + var(--height-6));
+}
+.dataPoint:nth-of-type(8) {
+  height: var(--height-8);
+  bottom: calc(var(--height-1) + var(--height-2) + var(--height-3) + var(--height-4) +  var(--height-5) + var(--height-6) + var(--height-7));
+}
+.dataPoint:nth-of-type(9) {
+  height: var(--height-9);
+  bottom: calc(var(--height-1) + var(--height-2) + var(--height-3) + var(--height-4) +  var(--height-5) + var(--height-6) + var(--height-7) + var(--height-8));
+}
