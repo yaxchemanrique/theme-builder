@@ -105,7 +105,7 @@ function SettingsForm() {
           <label htmlFor="border-radius">
             border-radius: {borderRadius / 100}rem
           </label>
-          <div className={styles.rangeInputContainer}>
+          <div>
             <input
               type="range"
               id="border-radius"

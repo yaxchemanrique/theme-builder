@@ -17,6 +17,10 @@
   margin-block-end: 1.125rem;
 }
 
+.rangeInputGroup input {
+  width: 100%;
+}
+
 .hexCodeGroup input {
   padding: 0.88rem;
   border-radius: var(--br);
