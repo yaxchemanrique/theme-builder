@@ -35,6 +35,14 @@ function UserSelection() {
           {/* <img src="" alt="" /> */}
           <div className={styles.userProfilePic}></div>
           <div className={styles.userInfo}>
+            <p className={styles.userName}>Vicky Watsica</p>
+            <p className={styles.userEmail}>vicky@email.com</p>
+          </div>
+        </li>
+        <li className={styles.user}>
+          {/* <img src="" alt="" /> */}
+          <div className={styles.userProfilePic}></div>
+          <div className={styles.userInfo}>
             <p className={styles.userName}>Michael Marvin</p>
             <p className={styles.userEmail}>michael@email.com</p>
           </div>

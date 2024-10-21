@@ -2,12 +2,15 @@
   background-color: var(--clr-surface-1);
   border-radius: var(--br);
   padding: var(--component-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.75rem;
 }
 
 .fromTitle {
   display: flex;
   gap: 0.75rem;
-  margin-bottom: 1.75rem;
 }
 
 .fromTitle p {

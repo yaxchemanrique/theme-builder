@@ -3,6 +3,9 @@
   background-color: var(--clr-surface-1);
   color: var(--clr-text-1);
   padding: var(--component-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .buttonSelection {
