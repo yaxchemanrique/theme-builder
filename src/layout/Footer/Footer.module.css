@@ -12,17 +12,11 @@
   background-image: linear-gradient(0deg, var(--brand-clr-100-100) 85%, var(--brand-clr-100-0) 100%);
   padding: 3rem;
   position: relative;
-  overflow: hidden;
 }
 
 .wrapper {
   position: relative;
-  transform: translateY(55%);
-}
-
-.meshTitle {
-  position: relative;
-  transform: translateY(-30%);
+  transform: translateY(25%);
 }
 
 .authorTag {
@@ -36,29 +30,28 @@
 }
 
 .footer ul {
-  width: 90vw;
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  transform: translateY(-60px);
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .footer li {
-  width: fit-content;
+  width: 35px;
   aspect-ratio: 1;
   background-color: black;
-  padding: 0.5rem;
-  scale: 1.4;
+  scale: 1.2;
+  display: grid;
+  place-content: center;
   transition: all ease-in-out 200ms;
 }
 
-.footer li a {
+.footer a {
   display: grid;
   place-content: center;
 }
 
 .footer li:hover {
-  scale: 1.45;
+  scale: 1.22;
 }
