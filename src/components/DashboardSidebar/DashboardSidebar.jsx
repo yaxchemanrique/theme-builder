@@ -1,7 +1,10 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeProvider.jsx";
-import styles from "./DashboardSidebar.module.css";
+
+import profileAvatar from '../../assets/violet-profile-picture.svg'
 import SidebarLink from "../SidebarLink/SidebarLink.jsx";
+
+import styles from "./DashboardSidebar.module.css";
 
 function DashboardSidebar() {
   const { theme } = useContext(ThemeContext);
@@ -10,7 +13,7 @@ function DashboardSidebar() {
     <aside className={`${styles.dashboardSidebar} ${styles[`theme-${theme}`]}`}>
       <div className={styles.profileInfoContainer}>
         <img
-          src="./src/assets/violet-profile-picture.svg"
+          src={profileAvatar}
           alt="Violet Windler"
         />
         <div className={styles.profileInfo}>
