@@ -13,7 +13,7 @@ function Footer() {
       <div className={styles.wrapper}>
         <div className={styles.meshTitle}>
           <div>
-            <object data="/inputs-title.svg"></object>
+            <object data="./theme-mesh.svg"></object>
           </div>
           <address rel="author" className={styles.authorTag}>
             by Yaxche Manrique
